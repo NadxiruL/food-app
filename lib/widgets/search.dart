@@ -11,7 +11,18 @@ class Search extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: TextFormField(
         decoration: InputDecoration(
+          prefixIcon: Icon(Icons.search),
           hintText: 'Find you favorite foods..',
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey.shade600,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey.shade600,
+            ),
+          ),
         ),
       ),
     );
