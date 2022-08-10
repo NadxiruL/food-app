@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:deligram/widgets/menu_list.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/coffeelist.dart';
+import '../widgets/coffee_list.dart';
 
 class ProductsOverviewScreen extends StatelessWidget {
   const ProductsOverviewScreen({Key? key}) : super(key: key);
@@ -24,11 +25,9 @@ class ProductsOverviewScreen extends StatelessWidget {
                   color: Colors.grey.shade600,
                 ),
               ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.grey.shade600,
-                ),
-              ),
+              // enabledBorder: OutlineInputBorder(
+              //   borderSide: BorderSide(color: Colors.blue),
+              // ),
             ),
           ),
         ),
@@ -36,30 +35,36 @@ class ProductsOverviewScreen extends StatelessWidget {
         //List of coffee tab //
 
         Container(
-          margin: EdgeInsets.only(top: 10),
+          margin: EdgeInsets.all(8),
           height: 50,
           color: Colors.black12,
-          child: ListView(
+          child: SingleChildScrollView(
+            child: Row(children: [
+              CoffeeList(menutype: 'Breakfast'),
+              CoffeeList(menutype: 'Lunch'),
+              CoffeeList(menutype: 'Supper'),
+              CoffeeList(menutype: 'Supper'),
+              CoffeeList(menutype: 'Supper')
+            ]),
             scrollDirection: Axis.horizontal,
-            children: [
-              Row(
-                children: [
-                  CoffeeList(menutype: 'Breakfast'),
-                  CoffeeList(menutype: 'Lunch'),
-                  CoffeeList(menutype: 'Supper')
-                ],
-              ),
-            ],
           ),
         ),
 
-        //Menu List //
+        SizedBox(
+          height: 10,
+        ),
 
-        Container(
-          margin: EdgeInsets.only(top: 25),
-          color: Colors.orange,
-          height: 50,
-        )
+        //Menu List //
+        Expanded(
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              MenuList(),
+              MenuList(),
+              MenuList(),
+            ],
+          ),
+        ),
       ],
     );
   }

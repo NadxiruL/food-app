@@ -7,7 +7,9 @@ class CoffeeList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 50),
+      padding: const EdgeInsets.only(
+        left: 50,
+      ),
       child: Text(
         menutype,
         style: TextStyle(

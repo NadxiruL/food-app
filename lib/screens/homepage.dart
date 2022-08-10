@@ -12,7 +12,7 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.only(left: 95),
-          child: Text('Deligram'),
+          child: Text('Pasar'),
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
