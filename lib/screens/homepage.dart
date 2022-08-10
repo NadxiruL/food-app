@@ -2,7 +2,6 @@
 
 import 'package:deligram/screens/products_overview.dart';
 import 'package:flutter/material.dart';
-import '../widgets/menu.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -17,7 +16,12 @@ class Homepage extends StatelessWidget {
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: const Menu(),
+        leading: IconButton(
+          onPressed: () {
+            print('something');
+          },
+          icon: const Icon(Icons.menu),
+        ),
       ),
       body: ProductsOverviewScreen(),
     );
