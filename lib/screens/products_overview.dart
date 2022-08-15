@@ -1,71 +1,45 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:deligram/widgets/menu_list.dart';
+
+import '../widgets/menu_tab.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/coffee_list.dart';
-
 class ProductsOverviewScreen extends StatelessWidget {
-  const ProductsOverviewScreen({Key? key}) : super(key: key);
+  const ProductsOverviewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // search box //
-
-        Container(
-          padding: const EdgeInsets.all(8.0),
-          child: TextFormField(
-            decoration: InputDecoration(
-              prefixIcon: Icon(Icons.search),
-              hintText: 'Find you favorite foods..',
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.grey.shade600,
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text('Deligram')),
+      ),
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.black26,
               ),
-              // enabledBorder: OutlineInputBorder(
-              //   borderSide: BorderSide(color: Colors.blue),
-              // ),
+              height: 100,
+              child: MenuTab(),
             ),
           ),
-        ),
-
-        //List of coffee tab //
-
-        Container(
-          margin: EdgeInsets.all(8),
-          height: 50,
-          color: Colors.black12,
-          child: SingleChildScrollView(
-            child: Row(children: [
-              CoffeeList(menutype: 'Breakfast'),
-              CoffeeList(menutype: 'Lunch'),
-              CoffeeList(menutype: 'Supper'),
-              CoffeeList(menutype: 'Supper'),
-              CoffeeList(menutype: 'Supper')
-            ]),
-            scrollDirection: Axis.horizontal,
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              alignment: Alignment.bottomLeft,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.black26,
+              ),
+              height: 250,
+              child: MenuList(),
+            ),
           ),
-        ),
-
-        SizedBox(
-          height: 10,
-        ),
-
-        //Menu List //
-        Expanded(
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              MenuList(),
-              MenuList(),
-              MenuList(),
-            ],
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
