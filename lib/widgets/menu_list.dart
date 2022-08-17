@@ -49,11 +49,12 @@ class _MenuListState extends State<MenuList> {
                     color: Colors.black38,
                   ),
                   width: 150,
-                  child: Image.network(
-                    blends![index].product.featuredImage,
-                    fit: BoxFit.cover,
+                  child: Container(
+                    child: Image.network(
+                      blends![index].product.featuredImage,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  // child: Text(blends![index].pr.name),
                 ),
               );
             },

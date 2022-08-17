@@ -17,4 +17,9 @@ class BlendProvider with ChangeNotifier {
   //     return blendFromJson(json);
   //   }
   // }
+  int selectedIndex = 0;
+  void onItemTapFunc(int index) {
+    selectedIndex = index;
+    notifyListeners();
+  }
 }
