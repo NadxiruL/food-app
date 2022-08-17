@@ -22,9 +22,9 @@ class Blend {
   DateTime createdAt;
 
   factory Blend.fromJson(Map<String, dynamic> json) => Blend(
-        Customer.fromJson(json["customer"] ?? ''),
-        Product.fromJson(json["product"] ?? ''),
-        DateTime.parse(json["created_at"] ?? ''),
+        Customer.fromJson(json["customer"]),
+        Product.fromJson(json["product"]),
+        DateTime.parse(json["created_at"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -69,14 +69,14 @@ class Product {
     this.featuredImage,
   );
 
-  String? name;
-  String? url;
-  String? featuredImage;
+  String name;
+  String url;
+  String featuredImage;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
-        json["name"] ?? '',
-        json["url"] ?? '',
-        json["featured_image"] ?? '',
+        json["name"],
+        json["url"],
+        json["featured_image"],
       );
 
   Map<String, dynamic> toJson() => {
