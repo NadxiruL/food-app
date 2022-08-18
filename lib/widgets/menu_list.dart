@@ -3,10 +3,9 @@
 import 'package:deligram/models/blend_provider.dart';
 import 'package:deligram/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 import '../models/blend.dart';
-import '../services/services.dart';
+import 'package:provider/provider.dart';
+// import '../services/services.dart';
 
 class MenuList extends StatefulWidget {
   const MenuList({super.key});
@@ -16,31 +15,23 @@ class MenuList extends StatefulWidget {
 }
 
 class _MenuListState extends State<MenuList> {
-  List<Blend>? blends;
-  var isLoading = false;
+  // List<Blend>? blenData = [];
+  // var isLoading = true;
 
   @override
   void initState() {
     super.initState();
+    final prov = Provider.of<BlendProvider>(context, listen: false);
     //fetch data from API
-    getData();
-  }
-
-  getData() async {
-    blends = await BlendRemoteService().getBlends();
-
-    if (blends != null) {
-      setState(() {
-        isLoading = true;
-      });
-    }
+    prov.getData();
   }
 
   @override
   Widget build(BuildContext context) {
-    return isLoading
+    final blendData = Provider.of<BlendProvider>(context);
+    return blendData.isLoading
         ? ListView.builder(
-            itemCount: blends?.length,
+            itemCount: blendData.blends?.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -54,22 +45,27 @@ class _MenuListState extends State<MenuList> {
                       child: Column(
                         children: [
                           Image.network(
-                            blends![index].product.featuredImage,
+                            blendData.blends?[index].product.featuredImage ??
+                                '',
                             fit: BoxFit.cover,
                           ),
-                          Center(child: Text(blends![index].product.name))
+                          Center(
+                              child: Text(
+                                  blendData.blends?[index].product.name ?? ''))
                         ],
                       ),
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DetailsScreen(
-                                productName: blends![index].product.name,
-                                productImage:
-                                    blends![index].product.featuredImage,
-                              ),
-                            ));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailsScreen(
+                                productName:
+                                    blendData.blends?[index].product.name ?? '',
+                                productImage: blendData
+                                        .blends?[index].product.featuredImage ??
+                                    ''),
+                          ),
+                        );
                       },
                     ),
                   ),

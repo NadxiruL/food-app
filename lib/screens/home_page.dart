@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:deligram/models/blend_provider.dart';
-
+import 'package:deligram/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'products_overview_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,11 +13,12 @@ class HomePage extends StatelessWidget {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   final List<Widget> _widgetOptions = <Widget>[
     ProductsOverView(),
-    Icon(
-        // 'Cart',
-        // style: optionStyle,
-        Icons.shopping_cart,
-        size: 50),
+    CartScreen(),
+    // Icon(
+    //     // 'Cart',
+    //     // style: optionStyle,
+    //     Icons.shopping_cart,
+    //     size: 50),
     Text(
       'Profile',
       style: optionStyle,

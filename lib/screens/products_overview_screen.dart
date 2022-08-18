@@ -5,15 +5,19 @@ import '../widgets/menu_list.dart';
 import '../widgets/menu_tab.dart';
 import 'package:provider/provider.dart';
 
-class ProductsOverView extends StatelessWidget {
+class ProductsOverView extends StatefulWidget {
   ProductsOverView({super.key});
 
-  // List<Blend>? filteredProducts;
+  @override
+  State<ProductsOverView> createState() => _ProductsOverViewState();
+}
 
+class _ProductsOverViewState extends State<ProductsOverView> {
   final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    List<Blend> blend = [];
     final blends = Provider.of<BlendProvider>(context);
     return Column(
       // mainAxisAlignment: MainAxisAlignment.center,
@@ -24,7 +28,9 @@ class ProductsOverView extends StatelessWidget {
             // color: Colors.amber,
             child: TextField(
               autofocus: false,
-              onChanged: blends.searchProduct,
+              onChanged: (value) {
+                // blends.searchText = value;
+              },
               controller: controller,
               decoration: InputDecoration(
                 labelText: 'Search..',
@@ -38,24 +44,22 @@ class ProductsOverView extends StatelessWidget {
 
         //Search Result//
 
-        ListView.builder(
-          shrinkWrap: true,
-          itemCount: blends.filteredProducts.length,
-          itemBuilder: (context, i) {
-            Blend bleng = Blend as Blend;
-            return ListTile(
-              leading: Image.network(
-                bleng.product.featuredImage,
-                fit: BoxFit.cover,
-                width: 50,
-                height: 50,
-              ),
-              title: Text(
-                bleng.product.featuredImage,
-              ),
-            );
-          },
-        ),
+        // ListView.builder(
+        //   shrinkWrap: true,
+        //   itemCount: blend.length,
+        //   itemBuilder: (context, i) {
+        //     List<Blend> blend = [];
+        //     return ListTile(
+        //       leading: Image.network(
+        //         blend[i].product.featuredImage,
+        //         fit: BoxFit.cover,
+        //         width: 50,
+        //         height: 50,
+        //       ),
+        //       title: Text(blend[i].product.name),
+        //     );
+        //   },
+        // ),
 
         Padding(
           padding: const EdgeInsets.all(12.0),
