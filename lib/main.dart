@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           primarySwatch: Colors.orange,
         ),
-        home: const HomePage(),
+        home: HomePage(),
       ),
     );
   }

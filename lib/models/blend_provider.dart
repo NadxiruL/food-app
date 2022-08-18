@@ -1,8 +1,11 @@
+import 'package:deligram/services/services.dart';
 import 'package:flutter/material.dart';
 import 'blend.dart';
 
 class BlendProvider with ChangeNotifier {
-  // Blend? blend;
+  List<Blend> filteredProducts = [];
+  int? nomborIndex = 0;
+  // final getProducts = BlendRemoteService().getBlends();
   // bool isLoading = true;
 
   // Future<List<Blend>?> getBlends() async {
@@ -19,6 +22,11 @@ class BlendProvider with ChangeNotifier {
   int selectedIndex = 0;
   void onItemTapFunc(int index) {
     selectedIndex = index;
+    notifyListeners();
+  }
+
+  void searchProduct(String inputText) async {
+    filteredProducts = (await BlendRemoteService().getBlends())!;
     notifyListeners();
   }
 }

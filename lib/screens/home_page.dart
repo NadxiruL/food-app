@@ -1,15 +1,18 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:deligram/models/blend_provider.dart';
-import 'package:deligram/screens/procuts_overview_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'products_overview_screen.dart';
+
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  final List<Widget> _widgetOptions = <Widget>[
     ProductsOverView(),
     Icon(
         // 'Cart',
@@ -29,6 +32,7 @@ class HomePage extends StatelessWidget {
     var platform = Theme.of(context).platform;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
