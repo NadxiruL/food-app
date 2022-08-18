@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:deligram/models/blend_provider.dart';
+import 'package:deligram/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -46,13 +47,30 @@ class _MenuListState extends State<MenuList> {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.black38,
                   ),
                   width: 150,
                   child: Container(
-                    child: Image.network(
-                      blends![index].product.featuredImage,
-                      fit: BoxFit.cover,
+                    child: GestureDetector(
+                      child: Column(
+                        children: [
+                          Image.network(
+                            blends![index].product.featuredImage,
+                            fit: BoxFit.cover,
+                          ),
+                          Center(child: Text(blends![index].product.name))
+                        ],
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailsScreen(
+                                productName: blends![index].product.name,
+                                productImage:
+                                    blends![index].product.featuredImage,
+                              ),
+                            ));
+                      },
                     ),
                   ),
                 ),

@@ -11,10 +11,11 @@ class HomePage extends StatelessWidget {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     ProductsOverView(),
-    Text(
-      'Cart',
-      style: optionStyle,
-    ),
+    Icon(
+        // 'Cart',
+        // style: optionStyle,
+        Icons.shopping_cart,
+        size: 50),
     Text(
       'Profile',
       style: optionStyle,
@@ -25,11 +26,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final blend = Provider.of<BlendProvider>(context);
 
+    var platform = Theme.of(context).platform;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Center(child: Text('KEDAI KOPI')),
+        title: Center(
+            child: Text(platform == TargetPlatform.android
+                ? 'KEDAI KOPI'
+                : 'KOPI KEDAI')),
       ),
       body: Center(
         child: _widgetOptions.elementAt(blend.selectedIndex),
@@ -41,7 +47,7 @@ class HomePage extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_shopping_cart),
+            icon: Icon(Icons.shopping_cart),
             label: 'Cart',
           ),
           BottomNavigationBarItem(
