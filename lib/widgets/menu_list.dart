@@ -31,7 +31,7 @@ class _MenuListState extends State<MenuList> {
     final blendData = Provider.of<BlendProvider>(context);
     return blendData.isLoading
         ? ListView.builder(
-            itemCount: blendData.blends?.length,
+            itemCount: blendData.filteredProducts?.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -45,13 +45,19 @@ class _MenuListState extends State<MenuList> {
                       child: Column(
                         children: [
                           Image.network(
-                            blendData.blends?[index].product.featuredImage ??
+                            blendData.filteredProducts?[index].product
+                                    .featuredImage ??
                                 '',
                             fit: BoxFit.cover,
+                            errorBuilder: (BuildContext context,
+                                Object exception, StackTrace? stackTrace) {
+                              return const Text('😢');
+                            },
                           ),
                           Center(
-                              child: Text(
-                                  blendData.blends?[index].product.name ?? ''))
+                              child: Text(blendData
+                                      .filteredProducts?[index].product.name ??
+                                  ''))
                         ],
                       ),
                       onTap: () {
