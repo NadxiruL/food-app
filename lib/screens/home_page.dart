@@ -2,6 +2,7 @@
 
 import 'package:deligram/models/blend_provider.dart';
 import 'package:deligram/screens/cart_screen.dart';
+import 'package:deligram/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'products_overview_screen.dart';
@@ -14,13 +15,9 @@ class HomePage extends StatelessWidget {
   final List<Widget> _widgetOptions = <Widget>[
     ProductsOverView(),
     CartScreen(),
-    // Icon(
-    //     // 'Cart',
-    //     // style: optionStyle,
-    //     Icons.shopping_cart,
-    //     size: 50),
+    ProfileScreen(),
     Text(
-      'Profile',
+      'Payment Gateway',
       style: optionStyle,
     ),
   ];
@@ -57,6 +54,10 @@ class HomePage extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outlined),
             label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.money),
+            label: 'Payment Gateway',
           ),
         ],
         currentIndex: blend.selectedIndex,

@@ -46,7 +46,7 @@ class _ProductsOverViewState extends State<ProductsOverView> {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Colors.black26,
+              color: Colors.black12,
             ),
             height: 100,
             child: MenuTab(),
@@ -57,8 +57,12 @@ class _ProductsOverViewState extends State<ProductsOverView> {
           child: Container(
             alignment: Alignment.bottomLeft,
             decoration: BoxDecoration(
+              // boxShadow: [
+              //   BoxShadow(blurRadius: 5.0, offset: Offset(0, 5)),
+              // ],
+              // boxShadow: BoxShadow(),
               borderRadius: BorderRadius.circular(15),
-              color: Colors.black26,
+              color: Colors.black12,
             ),
             height: 250,
             child: MenuList(),

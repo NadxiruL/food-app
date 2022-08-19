@@ -14,7 +14,7 @@ class MenuList extends StatefulWidget {
   State<MenuList> createState() => _MenuListState();
 }
 
-class _MenuListState extends State<MenuList> {
+class _MenuListState extends State<MenuList> with TickerProviderStateMixin {
   // List<Blend>? blenData = [];
   // var isLoading = true;
 
