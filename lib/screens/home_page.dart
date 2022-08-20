@@ -15,11 +15,11 @@ class HomePage extends StatelessWidget {
   final List<Widget> _widgetOptions = <Widget>[
     ProductsOverView(),
     CartScreen(),
-    ProfileScreen(),
     Text(
       'Payment Gateway',
       style: optionStyle,
     ),
+    ProfileScreen(),
   ];
 
   @override
@@ -52,12 +52,12 @@ class HomePage extends StatelessWidget {
             label: 'Cart',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outlined),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.money),
             label: 'Payment Gateway',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outlined),
+            label: 'Profile',
           ),
         ],
         currentIndex: blend.selectedIndex,

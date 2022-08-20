@@ -64,7 +64,7 @@ class _ProductsOverViewState extends State<ProductsOverView> {
               borderRadius: BorderRadius.circular(15),
               color: Colors.black12,
             ),
-            height: 250,
+            height: 300,
             child: MenuList(),
           ),
         ),

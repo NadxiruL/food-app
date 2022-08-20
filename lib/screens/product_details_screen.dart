@@ -1,4 +1,7 @@
+import '../models/blend_provider.dart';
+import '../models/cart.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DetailsScreen extends StatelessWidget {
   final String productName;
@@ -8,6 +11,8 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cartData = Provider.of<CartProvider>(context);
+    final blendData = Provider.of<BlendProvider>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -20,30 +25,38 @@ class DetailsScreen extends StatelessWidget {
           children: [
             Image.network(productImage),
             SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(productName),
-                Container(
-                  decoration: BoxDecoration(
+            Container(
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.black12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(productName),
+                  Container(
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Colors.amberAccent[400]),
-                  child: IconButton(
-                      // alignment: Alignment.centerRight,
-                      onPressed: () {
-                        final snackBar = SnackBar(
-                          content: Text('added to cart'),
-                          duration: Duration(milliseconds: 1000),
-                          action: SnackBarAction(
-                            label: 'close',
-                            onPressed: () {},
-                          ),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      },
-                      icon: Icon(Icons.add_shopping_cart)),
-                ),
-              ],
+                      // color: Colors.amberAccent[400]
+                    ),
+                    child: IconButton(
+                        // alignment: Alignment.centerRight,
+                        onPressed: () {
+                          cartData.addtoCart;
+                          final snackBar = SnackBar(
+                            content: Text('added to cart'),
+                            duration: Duration(milliseconds: 1000),
+                            action: SnackBarAction(
+                              label: 'close',
+                              onPressed: () {},
+                            ),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        },
+                        icon: Icon(Icons.add_shopping_cart)),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
