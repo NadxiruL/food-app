@@ -16,6 +16,8 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         title: Text(productName),
       ),
       body: Container(
@@ -28,8 +30,14 @@ class DetailsScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.black12),
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.black12,
+                // boxShadow: [
+                //   BoxShadow(
+                //     blurRadius: 1.0,
+                //   ),
+                // ],
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -37,6 +45,7 @@ class DetailsScreen extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
+
                       // color: Colors.amberAccent[400]
                     ),
                     child: IconButton(

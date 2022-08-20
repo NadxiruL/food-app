@@ -42,26 +42,36 @@ class HomePage extends StatelessWidget {
         child: _widgetOptions.elementAt(blend.selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        // elevation: 4,
+        // backgroundColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(
+              Icons.home,
+            ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(
+              Icons.shopping_cart,
+            ),
             label: 'Cart',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.money),
+            icon: Icon(
+              Icons.money,
+            ),
             label: 'Payment Gateway',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outlined),
+            icon: Icon(
+              Icons.person_outlined,
+            ),
             label: 'Profile',
           ),
         ],
         currentIndex: blend.selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.black54,
         onTap: blend.onItemTapFunc,
       ),
     );

@@ -42,23 +42,33 @@ class _MenuListState extends State<MenuList> with TickerProviderStateMixin {
                   width: 150,
                   child: Container(
                     child: GestureDetector(
-                      child: Column(
-                        children: [
-                          Image.network(
-                            blendData.filteredProducts?[index].product
-                                    .featuredImage ??
-                                '',
-                            fit: BoxFit.cover,
-                            errorBuilder: (BuildContext context,
-                                Object exception, StackTrace? stackTrace) {
-                              return const Text('😢');
-                            },
-                          ),
-                          Center(
-                              child: Text(blendData
-                                      .filteredProducts?[index].product.name ??
-                                  ''))
-                        ],
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.black12,
+                        ),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.network(
+                                blendData.filteredProducts?[index].product
+                                        .featuredImage ??
+                                    '',
+                                fit: BoxFit.cover,
+                                errorBuilder: (BuildContext context,
+                                    Object exception, StackTrace? stackTrace) {
+                                  return const Text('😢');
+                                },
+                              ),
+                            ),
+                            Center(
+                                child: Text(blendData.filteredProducts?[index]
+                                        .product.name ??
+                                    ''))
+                          ],
+                        ),
                       ),
                       onTap: () {
                         Navigator.push(

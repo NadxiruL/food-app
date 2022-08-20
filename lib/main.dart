@@ -24,10 +24,13 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           brightness: Brightness.dark,
-          primarySwatch: Colors.grey,
+          // primarySwatch: Colors.grey,
+          // primaryTextTheme:
+          //     TextTheme(bodyText1: TextStyle(color: Colors.black)),
         ),
         home: HomePage(),
       ),

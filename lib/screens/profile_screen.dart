@@ -24,14 +24,30 @@ class ProfileScreen extends StatelessWidget {
             Divider(
               color: Colors.white,
             ),
-            TextButton(onPressed: () {}, child: Text('Rewards')),
-            Divider(color: Colors.white),
-            TextButton(onPressed: () {}, child: Text('Subscription')),
-            Divider(color: Colors.white),
-            TextButton(onPressed: () {}, child: Text('Challenges')),
-            Divider(color: Colors.white),
-            TextButton(onPressed: () {}, child: Text('Referrals')),
-            Divider(color: Colors.white),
+            TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Rewards',
+                  style: TextStyle(color: Colors.white),
+                )),
+            Divider(color: Colors.black),
+            TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Subscription',
+                  style: TextStyle(color: Colors.white),
+                )),
+            Divider(color: Colors.black),
+            TextButton(
+                onPressed: () {},
+                child:
+                    Text('Challenges', style: TextStyle(color: Colors.white))),
+            Divider(color: Colors.black),
+            TextButton(
+                onPressed: () {},
+                child:
+                    Text('Referrals', style: TextStyle(color: Colors.white))),
+            Divider(color: Colors.black),
             SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -41,16 +57,30 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15),
-            Divider(color: Colors.white),
-            TextButton(onPressed: () {}, child: Text('Rewards member')),
-            Divider(color: Colors.white),
-            TextButton(onPressed: () {}, child: Text('Scheduled')),
-            Divider(color: Colors.white),
-            TextButton(onPressed: () {}, child: Text('Saved places')),
-            Divider(color: Colors.white),
-            TextButton(onPressed: () {}, child: Text('Business account')),
-            Divider(color: Colors.white),
-            TextButton(onPressed: () {}, child: Text('Settings')),
+            Divider(color: Colors.black),
+            TextButton(
+                onPressed: () {},
+                child: Text('Rewards member',
+                    style: TextStyle(color: Colors.white))),
+            Divider(color: Colors.black),
+            TextButton(
+                onPressed: () {},
+                child:
+                    Text('Scheduled', style: TextStyle(color: Colors.white))),
+            Divider(color: Colors.black),
+            TextButton(
+                onPressed: () {},
+                child: Text('Saved places',
+                    style: TextStyle(color: Colors.white))),
+            Divider(color: Colors.black),
+            TextButton(
+                onPressed: () {},
+                child: Text('Business account',
+                    style: TextStyle(color: Colors.white))),
+            Divider(color: Colors.black),
+            TextButton(
+                onPressed: () {},
+                child: Text('Settings', style: TextStyle(color: Colors.white))),
           ],
         ),
       ],

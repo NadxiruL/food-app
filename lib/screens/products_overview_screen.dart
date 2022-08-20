@@ -45,6 +45,11 @@ class _ProductsOverViewState extends State<ProductsOverView> {
           padding: const EdgeInsets.all(12.0),
           child: Container(
             decoration: BoxDecoration(
+              // boxShadow: [
+              //   BoxShadow(
+              //     blurRadius: 1.0,
+              //   ),
+              // ],
               borderRadius: BorderRadius.circular(15),
               color: Colors.black12,
             ),
@@ -58,11 +63,13 @@ class _ProductsOverViewState extends State<ProductsOverView> {
             alignment: Alignment.bottomLeft,
             decoration: BoxDecoration(
               // boxShadow: [
-              //   BoxShadow(blurRadius: 5.0, offset: Offset(0, 5)),
+              //   BoxShadow(
+              //     blurRadius: 1.0,
+              //   ),
               // ],
               // boxShadow: BoxShadow(),
               borderRadius: BorderRadius.circular(15),
-              color: Colors.black12,
+              // color: Colors.black87,
             ),
             height: 300,
             child: MenuList(),
