@@ -29,6 +29,7 @@ class _MenuListState extends State<MenuList> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final blendData = Provider.of<BlendProvider>(context);
+
     return blendData.isLoading
         ? ListView.builder(
             itemCount: blendData.filteredProducts?.length,
@@ -46,7 +47,7 @@ class _MenuListState extends State<MenuList> with TickerProviderStateMixin {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.black12,
+                          color: Colors.black45,
                         ),
                         child: Column(
                           children: [
@@ -55,7 +56,7 @@ class _MenuListState extends State<MenuList> with TickerProviderStateMixin {
                               child: Image.network(
                                 blendData.filteredProducts?[index].product
                                         .featuredImage ??
-                                    '',
+                                    "",
                                 fit: BoxFit.cover,
                                 errorBuilder: (BuildContext context,
                                     Object exception, StackTrace? stackTrace) {
@@ -64,9 +65,12 @@ class _MenuListState extends State<MenuList> with TickerProviderStateMixin {
                               ),
                             ),
                             Center(
-                                child: Text(blendData.filteredProducts?[index]
-                                        .product.name ??
-                                    ''))
+                                child: Container(
+                              margin: EdgeInsets.only(top: 8),
+                              child: Text(blendData
+                                      .filteredProducts?[index].product.name ??
+                                  ''),
+                            ))
                           ],
                         ),
                       ),

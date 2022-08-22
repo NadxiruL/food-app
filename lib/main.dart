@@ -1,3 +1,4 @@
+import 'package:deligram/models/blend.dart';
 import 'package:deligram/models/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,11 +17,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => BlendProvider(),
+        ChangeNotifierProvider.value(
+          // create: (_) => BlendProvider(),
+          value: BlendProvider(),
         ),
-        ChangeNotifierProvider(
-          create: (context) => CartProvider(),
+        ChangeNotifierProvider.value(
+          // create: (context) => CartProvider(),
+          value: CartProvider(),
         ),
       ],
       child: MaterialApp(
@@ -31,6 +34,7 @@ class MyApp extends StatelessWidget {
           // primarySwatch: Colors.grey,
           // primaryTextTheme:
           //     TextTheme(bodyText1: TextStyle(color: Colors.black)),
+          // fontFamily: bebas.n
         ),
         home: HomePage(),
       ),

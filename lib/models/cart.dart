@@ -24,9 +24,9 @@ class CartProvider with ChangeNotifier {
   //   return {...?_cartItem};
   // }
 
-  void addtoCart(Blend blend) {
+  void addtoCart(String name) {
     // _cartItem?.update("name", ((value) => Cart(name: blend.product.name)));
-    final cart = Cart(name: blend.product.name);
+    final cart = Cart(name: name);
     _cartItem?.add(cart);
     notifyListeners();
   }

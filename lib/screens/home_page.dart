@@ -4,6 +4,7 @@ import 'package:deligram/models/blend_provider.dart';
 import 'package:deligram/screens/cart_screen.dart';
 import 'package:deligram/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'products_overview_screen.dart';
 
@@ -34,9 +35,10 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Center(
-            child: Text(platform == TargetPlatform.android
-                ? 'KEDAI KOPI'
-                : 'KOPI KEDAI')),
+            child: Text(
+          platform == TargetPlatform.android ? 'KOPI' : 'KOPI KEDAI',
+          style: GoogleFonts.bebasNeue(fontSize: 30),
+        )),
       ),
       body: Center(
         child: _widgetOptions.elementAt(blend.selectedIndex),
@@ -71,7 +73,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
         currentIndex: blend.selectedIndex,
-        selectedItemColor: Colors.black54,
+        selectedItemColor: Colors.black45,
         onTap: blend.onItemTapFunc,
       ),
     );

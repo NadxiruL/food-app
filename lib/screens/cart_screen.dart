@@ -7,7 +7,7 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final blendData = Provider.of<CartProvider>(context);
+    final _cart = Provider.of<CartProvider>(context);
     return
         //Column(
         //   children: [
@@ -18,11 +18,12 @@ class CartScreen extends StatelessWidget {
 
         Container(
       child: ListView.builder(
-        itemCount: blendData.cartItem?.length,
+        itemCount: _cart.cartItem?.length,
         itemBuilder: (context, index) {
           return ListTile(
             // leading: Text('Hello'),
-            title: Text(blendData.cartItem![index].name ?? 'NONE'),
+            // title: Text(_cart.cartItem![index].name ?? 'NONE'),
+            title: Text('DATA DAH MASUK TAPI TAK APPEAR'),
             // title: Text('Cart Screen'),
           );
         },

@@ -1,6 +1,6 @@
 import 'package:deligram/models/blend_provider.dart';
 import 'package:flutter/material.dart';
-
+import '../widgets/search_product.dart';
 import '../widgets/menu_list.dart';
 import '../widgets/menu_tab.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +17,7 @@ class _ProductsOverViewState extends State<ProductsOverView> {
 
   @override
   Widget build(BuildContext context) {
-    final blendData = Provider.of<BlendProvider>(context);
+    final blendData = Provider.of<BlendProvider>(context, listen: false);
     return Column(
       // mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -25,20 +25,7 @@ class _ProductsOverViewState extends State<ProductsOverView> {
           padding: const EdgeInsets.all(12.0),
           child: Container(
             // color: Colors.amber,
-            child: TextField(
-              autofocus: false,
-              onChanged: (value) {
-                blendData.searchText = value;
-                blendData.searchProduct(value);
-              },
-              controller: controller,
-              decoration: InputDecoration(
-                labelText: 'Search..',
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
+            child: SearchProduct(blendData: blendData, controller: controller),
           ),
         ),
         Padding(
@@ -51,7 +38,7 @@ class _ProductsOverViewState extends State<ProductsOverView> {
               //   ),
               // ],
               borderRadius: BorderRadius.circular(15),
-              color: Colors.black12,
+              color: Colors.black45,
             ),
             height: 100,
             child: MenuTab(),
