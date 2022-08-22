@@ -3,7 +3,34 @@
 import 'package:flutter/material.dart';
 
 class MenuTab extends StatelessWidget {
-  const MenuTab({super.key});
+  MenuTab({super.key});
+
+  final List<Widget> tablist = <Widget>[
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text('Cappucino'),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text('Macchiato'),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text('Mocha Latte'),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text('Americano'),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text('Frappe'),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text('Iced Latte'),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -15,71 +42,11 @@ class MenuTab extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Container(
           margin: EdgeInsets.only(top: 25),
-          child: ListView(
+          child: ListView.builder(
+            itemCount: tablist.length,
+            itemBuilder: (context, index) => tablist[index],
             scrollDirection: Axis.horizontal,
             // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              // DefaultTabController(
-              //   length: 3,
-              //   child: TabBarView(children: [
-              //     Tab(icon: Icon(Icons.directions_car)),
-              //     Tab(icon: Icon(Icons.directions_transit)),
-              //     Tab(icon: Icon(Icons.directions_bike)),
-              //   ]),
-              // )
-
-              Text(
-                'Todo',
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-              Text(
-                'Todo',
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-              Text(
-                'Todo',
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-              Text(
-                'Todo',
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-              Text(
-                'Todo',
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-              Text(
-                'Todo',
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-            ],
           ),
         ),
       ),
