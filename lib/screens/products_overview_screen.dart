@@ -18,51 +18,54 @@ class _ProductsOverViewState extends State<ProductsOverView> {
   @override
   Widget build(BuildContext context) {
     final blendData = Provider.of<BlendProvider>(context, listen: false);
-    return Column(
-      // mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-            // color: Colors.amber,
-            child: SearchProduct(blendData: blendData, controller: controller),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-            decoration: BoxDecoration(
-              // boxShadow: [
-              //   BoxShadow(
-              //     blurRadius: 1.0,
-              //   ),
-              // ],
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.black45,
+    return SingleChildScrollView(
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              // color: Colors.amber,
+              child:
+                  SearchProduct(blendData: blendData, controller: controller),
             ),
-            height: 100,
-            child: MenuTab(),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-            alignment: Alignment.bottomLeft,
-            decoration: BoxDecoration(
-              // boxShadow: [
-              //   BoxShadow(
-              //     blurRadius: 1.0,
-              //   ),
-              // ],
-              // boxShadow: BoxShadow(),
-              borderRadius: BorderRadius.circular(15),
-              // color: Colors.black87,
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              decoration: BoxDecoration(
+                // boxShadow: [
+                //   BoxShadow(
+                //     blurRadius: 1.0,
+                //   ),
+                // ],
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.black45,
+              ),
+              height: 100,
+              child: MenuTab(),
             ),
-            height: 300,
-            child: MenuList(),
           ),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              alignment: Alignment.bottomLeft,
+              decoration: BoxDecoration(
+                // boxShadow: [
+                //   BoxShadow(
+                //     blurRadius: 1.0,
+                //   ),
+                // ],
+                // boxShadow: BoxShadow(),
+                borderRadius: BorderRadius.circular(15),
+                // color: Colors.black87,
+              ),
+              height: 300,
+              child: MenuList(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

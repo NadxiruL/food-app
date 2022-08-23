@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:deligram/screens/cappucino_screen.dart';
 import 'package:flutter/material.dart';
 
 class MenuTab extends StatelessWidget {
@@ -36,7 +37,11 @@ class MenuTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('something!');
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CappucinoScreen(name: 'Cappucino'),
+            ));
       },
       child: Padding(
         padding: const EdgeInsets.all(12.0),

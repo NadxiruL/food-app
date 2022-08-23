@@ -32,13 +32,21 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Icon(Icons.more_vert)],
+            ),
+          )
+        ],
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Center(
-            child: Text(
+        title: Text(
           platform == TargetPlatform.android ? 'KOPI' : 'KOPI KEDAI',
           style: GoogleFonts.bebasNeue(fontSize: 30),
-        )),
+        ),
       ),
       body: Center(
         child: _widgetOptions.elementAt(blend.selectedIndex),

@@ -4,8 +4,6 @@
 
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
-
 List<Blend> blendFromJson(String str) =>
     List<Blend>.from(json.decode(str).map((x) => Blend.fromJson(x)));
 

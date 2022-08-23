@@ -1,4 +1,5 @@
 import 'package:deligram/models/cart.dart';
+import 'package:deligram/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,26 +9,28 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _cart = Provider.of<CartProvider>(context);
-    return
-        //Column(
-        //   children: [
-        //     Text(blendData.cartItem.name),
-        //     // Text('Hello'),
-        //   ],
-        // );
-
-        Container(
-      child: ListView.builder(
-        itemCount: _cart.cartItem?.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            // leading: Text('Hello'),
-            // title: Text(_cart.cartItem![index].name ?? 'NONE'),
-            title: Text('DATA DAH MASUK TAPI TAK APPEAR'),
-            // title: Text('Cart Screen'),
-          );
-        },
-      ),
+    return ListView.builder(
+      itemCount: _cart.cartItem.length,
+      itemBuilder: (context, index) =>
+          CartItem(name: _cart.cartItem[index].name),
     );
+
+    // ListView.builder(
+    //   itemCount: _cart.cartItem.length,
+    //   itemBuilder: (context, index) {
+    //     return Column(
+    //       //     child: ListTile(
+    //       //   title: Text('Button cart clicked!'),
+    //       //
+    //       children: [
+    //         ..._cart.cartItem
+    //             .map((item) => ListTile(
+    //                   title: Text(item.name.toString()),
+    //                 ))
+    //             .toList(),
+    //       ],
+    //     );
+    //   },
+    // );
   }
 }

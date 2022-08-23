@@ -1,0 +1,5 @@
+const String PublishableKey =
+    'pk_test_51LXdwpAhnjbmDn1noLegUblhEVO0RUMGK5iuYcUZc91kXMYbiqscrweVVlHFWRyMac7bDVamBkuCovJIU6hLoehs00Mx8o6oL8';
+
+const String SecretKey =
+    'sk_test_51LXdwpAhnjbmDn1nTjFp1kKqlN8FuDDga6MhdPf319bGvSZsTu43zbJ3BUFLxZGhXsWLqyGKF79nxEaMi0eHsep6001W8ayaH0';

@@ -1,4 +1,3 @@
-import 'package:deligram/models/blend.dart';
 import 'package:deligram/models/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
